@@ -15,8 +15,8 @@
 
     <script type="text/javascript">
       // Client ID and API key from the Developer Console
-      var CLIENT_ID = '6166995043-ha5g2an98k2760q2thaq9ecf6s534ser.apps.googleusercontent.com';
-      var API_KEY = 'AIzaSyBi7q7Fi96WGF2BpjgT7kl4lv4fAnJrqsQ';
+      var CLIENT_ID = '939982240934-j9m5q491m5uo6vlsl2q02l65d0kod8e0.apps.googleusercontent.com';
+      var API_KEY = 'AIzaSyD0_JkpnzmFC4z0PdE8TYUMhgUXLPQalO0'
 
       // Array of API discovery doc URLs for APIs used by the quickstart
       var DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"];
@@ -106,22 +106,12 @@
       function listMajors() {
         gapi.client.sheets.spreadsheets.values.get({
           spreadsheetId: '1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms',
-          range: 'Class Data!A2:E',
-        }).then(function(response) {
-          var range = response.result;
-          if (range.values.length > 0) {
-            appendPre('Name, Major:');
-            for (i = 0; i < range.values.length; i++) {
-              var row = range.values[i];
-              // Print columns A and E, which correspond to indices 0 and 4.
-              appendPre(row[0] + ', ' + row[4]);
-            }
-          } else {
-            appendPre('No data found.');
-          }
-        }, function(response) {
-          appendPre('Error: ' + response.result.error.message);
-        });
+          range: 'Class Data!A2:E'
+        }).then((response) => {
+  var result = response.result;
+  var numRows = result.values ? result.values.length : 0;
+  alert(result);
+});
       }
 
     </script>
