@@ -15,8 +15,8 @@
 
     <script type="text/javascript">
       // Client ID and API key from the Developer Console
-      var CLIENT_ID = '939982240934-43g5aso4ava4qcfgtd46m64rqlo8anr3.apps.googleusercontent.com';
-      var API_KEY = 'AIzaSyD0_JkpnzmFC4z0PdE8TYUMhgUXLPQalO0'
+      var CLIENT_ID = '939982240934-4n2d3p8tlu3hvtvltet31rb2i1vsbj8o.apps.googleusercontent.com';
+      var API_KEY = 'AIzaSyCxszvPT_Pt6mEfvPX0FY11ybsfOgVerKA'
 
       // Array of API discovery doc URLs for APIs used by the quickstart
       var DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"];
@@ -105,8 +105,8 @@
        */
       function listMajors() {
         gapi.client.sheets.spreadsheets.values.get({
-          spreadsheetId: '1IoWbdkx3UW0DJ2mWMXfU1myzOkxIBeUG',
-          range: 'Class!A1:A2'
+          spreadsheetId: '1USM-2oBbVSBCYzj8HIKWNLV1KpohIy0M8616OMHtS0E',
+          range: 'Class!A1:A50'
         }).then((response) => {
   var range = response.result;
           if (range.values.length > 0) {
